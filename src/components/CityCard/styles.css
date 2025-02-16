@@ -1,0 +1,27 @@
+.city-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.city-card-button {
+    cursor: pointer;
+}
+
+.button-magin-right{
+    margin-right: 5px;
+}
+
+.button-magin-left{
+    margin-left: 5px;
+}
+
+.group-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}

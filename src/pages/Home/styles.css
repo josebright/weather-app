@@ -1,0 +1,38 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.city-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.text {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #d9534f;
+}
