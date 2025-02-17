@@ -6,7 +6,7 @@ export async function fetchCities(query: string): Promise<string[]> {
 
     try {
         const response = await fetch(
-            `${BASE_URL}?q=${encodeURIComponent(query)}&maxRows=10&featureClass=P&username=${USER_NAME}`
+            `${BASE_URL}/searchJSON?q=${encodeURIComponent(query)}&name_startsWith=${encodeURIComponent(query)}&maxRows=10&orderby=population&style=LONG&lang=en&username=${USER_NAME}`
         );
 
         const data = await response.json();
