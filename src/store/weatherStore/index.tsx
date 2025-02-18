@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 import { fetchWeatherByCities, fetchWeatherByCoords } from "../../api/fetchWeather";
 import { WeatherState, City } from "../../types";
 import { TOP15CITIESBYPOPULATION } from "../../utils/constants";
+import { capitalizeQuery } from "../../helper";
 
 let CITIES = TOP15CITIESBYPOPULATION;
 
@@ -22,14 +23,16 @@ export const useWeatherStore = create<WeatherState>() (
       setLoading: (loading: boolean) => set({ isLoading: loading }),
 
       addCity: async function (city: string, navigate: (path: string) => void) {
-        if (CITIES.includes(city)) {
-          await get().setError(`${city} already exists!`);
+        const capCity = capitalizeQuery(city);
+        console.log("city", capCity);
+        if (CITIES.includes(capCity)) {
+          await get().setError(`${capCity} already exists!`);
           return;
         }
 
         set({ isLoading: true });
-        CITIES = [...CITIES, city].sort((a, b) => a.localeCompare(b));
-        await get().fetchUpdatedCities(true, city, navigate);
+        CITIES = [...CITIES, capCity].sort((a, b) => a.localeCompare(b));
+        await get().fetchUpdatedCities(true, capCity, navigate);
       },
 
       removeCity: function (city: string) {

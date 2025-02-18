@@ -13,3 +13,8 @@ export const checkLocationPermission = async () => {
       return "unknown";
     }
 };
+
+
+export const capitalizeQuery = (query: string): string => {
+  return query.replace(/\b\w/g, char => char.toUpperCase());
+}
